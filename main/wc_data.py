@@ -23,5 +23,40 @@ class WCData:
         else:
             self.__file_path = file_path
 
+    @property
+    def line_count(self):
+        return self.__line_count
+
+    @property
+    def word_count(self):
+        return self.__word_count
+
+    @property
+    def byte_count(self):
+        return self.__byte_count
+
+    @property
+    def file_path(self):
+        return self.__file_path
+
     def __str__(self) -> str:
         return f"LINE_COUNT  WORD_COUNT  BYTE_COUNT  FILE_PATH\n{self.__line_count}    {self.__word_count}    {self.__byte_count}    {self.__file_path}"
+
+    def __eq__(self, __value: object) -> bool:
+        print(f"__value = {__value}")
+        print(f"self = {self}")
+        if not isinstance(__value, WCData):
+            return False
+        else:
+            if not __value.line_count == self.__line_count:
+                return False
+
+            if not __value.word_count == self.__word_count:
+                return False
+
+            if not __value.byte_count == self.__byte_count:
+                return False
+
+            # We do not care about file_path here
+
+            return True

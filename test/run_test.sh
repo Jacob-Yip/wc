@@ -1,0 +1,1 @@
+python -m unittest -v test/wc_test.py
