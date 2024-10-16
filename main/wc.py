@@ -1,6 +1,6 @@
 """
 The programme that counts the word count of the text in a file
-Input format: python3 wc.py <filename>
+Input format: python ./driver.py <filename>
 Output format:linecount    wordcount    bytecount   filepath
 """
 import os
