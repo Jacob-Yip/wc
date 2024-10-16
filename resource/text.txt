@@ -1,0 +1,6 @@
+First line
+2nd line
+3rd line
+There should be 6 lines
+Thus, the result should be 6    23    118    text.txt
+End of file
