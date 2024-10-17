@@ -1,0 +1,5 @@
+services:
+  wc:
+    build: ./wc
+    image: wc_image:v1
+    container_name: wc_container

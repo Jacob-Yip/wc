@@ -1,7 +1,7 @@
 """
 The class representing the result of the wc programme
 """
-from wc_src.main.utils.utils import Utils
+from ..utils.utils import Utils
 
 
 class WCData:

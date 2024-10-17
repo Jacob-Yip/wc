@@ -2,10 +2,18 @@
 This programme prompts user to provide a file path until he inputs "no"
 
 Command to run the programme
-- python -m wc.prompt (-m treats this file as a module from a package so that we can import WC)
+- python -m wc_src.prompt (-m treats this file as a module from a package so that we can import WC)
 """
 
-from wc_src.main.python.wc import WC
+from main.python.wc import WC
+# import sys
+# print(f"path = {sys.path}")
+
+print(f"__import__ = {__import__}")
+print(f"file={__file__}")
+print(f"package = {__package__}")
+# print(f"path = {__path__}")
+print(f"name = {__name__}")
 
 if __name__ == "__main__":
     again = True

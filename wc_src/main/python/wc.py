@@ -4,8 +4,8 @@ The class to read the file and count its number of words, lines and counts
 Output format:linecount    wordcount    bytecount   filepath
 """
 import os
-from wc_src.main.python.wc_data import WCData
-from wc_src.main.utils.utils import Utils
+from .wc_data import WCData
+from ..utils.utils import Utils
 
 
 class WC:
