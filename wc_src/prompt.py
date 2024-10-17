@@ -5,7 +5,7 @@ Command to run the programme
 - python -m wc.prompt (-m treats this file as a module from a package so that we can import WC)
 """
 
-from wc.main.python.wc import WC
+from wc_src.main.python.wc import WC
 
 if __name__ == "__main__":
     again = True
