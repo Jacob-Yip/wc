@@ -27,7 +27,7 @@ python ./driver.py <file_name>
 ```
 # Ensure you have docker engine running
 # Go to the root folder
-# docker-compose up
+docker-compose up
 ```
 - Build + Run
 ```
