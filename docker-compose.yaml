@@ -1,5 +1,5 @@
 services:
   wc:
-    build: ./wc
+    build: ./wc_src
     image: wc_image:v1
     container_name: wc_container

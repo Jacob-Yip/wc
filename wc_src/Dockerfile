@@ -1,8 +1,8 @@
 FROM python:3.8
 
-WORKDIR /wc_app
+WORKDIR /wc_src
 
-COPY . /wc_app
+COPY . .
 
 RUN echo $(ls -l .)
 RUN echo $(pwd)
