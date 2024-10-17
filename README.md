@@ -21,3 +21,18 @@ python ./driver.py <file_name>
 ```
 ./test/run_test.sh
 ```
+
+### How to run docker
+- Docker Compose
+```
+# Ensure you have docker engine running
+# Go to the root folder
+# docker-compose up
+```
+- Build + Run
+```
+# Ensure you have docker engine running
+# Go to the root folder
+docker build -t wc_app:v1 ./wc_src
+docker run wc_app:v1 
+```
