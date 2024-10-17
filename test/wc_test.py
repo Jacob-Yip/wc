@@ -9,6 +9,10 @@ from main.wc_data import WCData
 
 
 class WCTest(unittest.TestCase):
+    test_get_wc_test_values = {  # In the form of {filename: expected WCData instance}
+
+    }
+
     def setUp(self) -> None:
         # We will not create the wc instance here because each wc instance in each unit test is different due to file_path
         return super().setUp()
@@ -22,6 +26,7 @@ class WCTest(unittest.TestCase):
         # Add unit tests to test suite
         suite.addTest(WCTest("test_valid_file_path"))
         suite.addTest(WCTest("test_invalid_file_path"))
+        suite.addTest(WCTest("test_get_wc"))
 
         return suite
 
@@ -77,6 +82,9 @@ class WCTest(unittest.TestCase):
         # Invalid file format
         with self.assertRaises(Exception):
             self.__wc = WC(file_path="-")
+
+    def test_get_wc(self):
+        pass
 
 
 if __name__ == "__main__":
