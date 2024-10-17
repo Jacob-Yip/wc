@@ -4,7 +4,4 @@ WORKDIR /wc_src
 
 COPY . .
 
-RUN echo $(ls -l .)
-RUN echo $(pwd)
-
 CMD [ "python", "-m", "prompt" ]
