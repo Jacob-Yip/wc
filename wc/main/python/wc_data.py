@@ -1,7 +1,7 @@
 """
 The class representing the result of the wc programme
 """
-from utils.utils import Utils
+from wc.main.utils.utils import Utils
 
 
 class WCData:
@@ -49,6 +49,8 @@ class WCData:
         if not isinstance(__value, WCData):
             return False
         else:
+            # print(
+            #     f"\nbyte_count: {__value.line_count == self.__line_count}\nword_count: {__value.word_count == self.__word_count}\nbyte_count: {__value.byte_count == self.__byte_count}\n")
             if not __value.line_count == self.__line_count:
                 return False
 

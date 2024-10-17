@@ -2,12 +2,12 @@
 Unit test for WCData in main.wc_data
 """
 import unittest
-from main.wc_data import WCData
+from wc.main.python.wc_data import WCData
 
 
 class WCDataTest(unittest.TestCase):
-    DUMMY_FILE_PATH_1 = "resource/test/test_equal_1.txt"
-    DUMMY_FILE_PATH_2 = "resource/test/test_equal_2.txt"
+    DUMMY_FILE_PATH_1 = "wc/test/resource/test_equal_1.txt"
+    DUMMY_FILE_PATH_2 = "wc/test/resource/test_equal_2.txt"
     TEST_EQUAL_TEST_VALUES = [  # In the form of [First instance, Second instance, boolean equal?]
         [WCData(1, 1, 1, DUMMY_FILE_PATH_1), WCData(
             1, 1, 1, DUMMY_FILE_PATH_1), True],

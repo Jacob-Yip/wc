@@ -3,21 +3,21 @@ Unit test for WC in main.wc
 """
 
 import unittest
-from main.wc import WC
+from wc.main.python.wc import WC
 import os
-from main.wc_data import WCData
+from wc.main.python.wc_data import WCData
 
 
 class WCTest(unittest.TestCase):
     TEST_GET_WC_TEST_VALUES = {  # In the form of {filename: expected WCData instance}
-        "resource/test/test_get_wc_0_0_0.txt": WCData(
-            0, 0, 0, "resource/test/test_get_wc_0_0_0.txt"),
-        "resource/test/test_get_wc_1_176_1142.txt": WCData(
-            1, 176, 1142, "resource/test/test_get_wc_1_176_1142.txt"),
-        "resource/test/test_get_wc_10_0_60.txt": WCData(
-            10, 0, 60, "resource/test/test_get_wc_10_0_60.txt"),
-        "resource/test/test_get_wc_14_0_28.txt": WCData(
-            14, 0, 28, "resource/test/test_get_wc_14_0_28.txt")
+        "wc/test/resource/test_get_wc_0_0_0.txt": WCData(
+            0, 0, 0, "wc/test/resource/test_get_wc_0_0_0.txt"),
+        "wc/test/resource/test_get_wc_1_176_1142.txt": WCData(
+            1, 176, 1142, "wc/test/resource/test_get_wc_1_176_1142.txt"),
+        "wc/test/resource/test_get_wc_10_0_51.txt": WCData(
+            10, 0, 51, "wc/test/resource/test_get_wc_10_0_51.txt"),
+        "wc/test/resource/test_get_wc_14_0_14.txt": WCData(
+            14, 0, 14, "wc/test/resource/test_get_wc_14_0_14.txt")
     }
 
     def setUp(self) -> None:
@@ -41,14 +41,15 @@ class WCTest(unittest.TestCase):
         """
         Test whether wc accepts valid file path
         """
-        FILE_PATH = "resource/test/test_valid_file_path.txt"
+        FILE_PATH = "wc/test/resource/test_valid_file_path.txt"
         file_content = "First line\n" + \
             "2nd line\n" + \
             "3rd line\n" + \
             "There should be 6 lines\n" + \
-            "Thus, the result should be 6    23    153    resource/test/test_valid_file_path.txt\n" + \
+            "Thus, the result should be 6    23    151    wc/test/resource/test_valid_file_path.txt\n" + \
             "End of file"
 
+        new_file = None
         try:
             # Create a file
             new_file = open(FILE_PATH, "wt")
@@ -58,7 +59,7 @@ class WCTest(unittest.TestCase):
             expected_wc_data = WCData(
                 line_count=6,
                 word_count=23,
-                byte_count=153,
+                byte_count=151,
                 file_path=FILE_PATH
             )
 
@@ -69,7 +70,8 @@ class WCTest(unittest.TestCase):
         except Exception as e:
             self.fail()
         finally:
-            new_file.close()
+            if not new_file is None:
+                new_file.close()
 
             # We have to close the process new_file first before using os
             # Delete the newly created file

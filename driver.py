@@ -3,9 +3,9 @@ Input format: python ./driver.py <filename>
 Input format: python ./driver.py
 """
 import sys
-from main.wc import WC
+from wc.main.python.wc import WC
 
-FILE_PATH = "resource/text.txt"  # Default file path
+FILE_PATH = "wc/main/resource/text.txt"  # Default file path
 
 if __name__ == "__main__":
     # Main programme
