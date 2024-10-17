@@ -1,3 +1,6 @@
+"""
+Unit test for WCData in main.wc_data
+"""
 import unittest
 from main.wc_data import WCData
 
@@ -55,6 +58,9 @@ class WCDataTest(unittest.TestCase):
         return suite
 
     def test_invalid_constructor(self):
+        """
+        Test WCData()
+        """
         # Absence of parameter(s)
         with self.assertRaises(Exception):
             _ = WCData(None, 0, 0, WCDataTest.DUMMY_FILE_PATH_1)
@@ -98,16 +104,25 @@ class WCDataTest(unittest.TestCase):
         _ = WCData(0, 0, 0, WCDataTest.DUMMY_FILE_PATH_1)
 
     def test_equal(self):
+        """
+        Test __eq__()
+        """
         for test_data_set in WCDataTest.TEST_EQUAL_TEST_VALUES:
             self.assertEqual(
                 test_data_set[2], (test_data_set[0] == test_data_set[1]))
 
     def test_str(self):
+        """
+        Test __str__()
+        """
         for (expected_str, instance) in WCDataTest.TEST_STR_TEST_VALUES.items():
             print(instance)
             self.assertEqual(expected_str, str(instance))
 
     def test_property(self):
+        """
+        Test @property in WCData
+        """
         for test_data_set in WCDataTest.TEST_PROPERTY_TEST_VALUES:
             self.assertEqual(test_data_set[1], test_data_set[0].line_count)
             self.assertEqual(test_data_set[2], test_data_set[0].word_count)

@@ -1,5 +1,5 @@
 # wc
-Similar to Linux command wc
+###### Similar to Linux command wc
 
 ### This file contains the description of this project
 ### Created by Toothless7788
@@ -15,4 +15,9 @@ python ./driver.py
 2. Run file with specific file name
 ```
 python ./driver.py <file_name>
+```
+
+### How to run testing programmes
+```
+./test/run_test.sh
 ```

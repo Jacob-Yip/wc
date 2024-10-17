@@ -1,3 +1,6 @@
+"""
+The class representing the result of the wc programme
+"""
 from utils.utils import Utils
 
 

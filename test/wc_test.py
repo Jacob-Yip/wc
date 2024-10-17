@@ -38,6 +38,9 @@ class WCTest(unittest.TestCase):
         return suite
 
     def test_valid_file_path(self):
+        """
+        Test whether wc accepts valid file path
+        """
         FILE_PATH = "resource/test/test_valid_file_path.txt"
         file_content = "First line\n" + \
             "2nd line\n" + \
@@ -74,6 +77,9 @@ class WCTest(unittest.TestCase):
                 os.remove(FILE_PATH)
 
     def test_invalid_file_path(self):
+        """
+        Test whether wc throws Exception when invalid file paths are given
+        """
         # Non-existent file path
         with self.assertRaises(Exception):
             _ = WC(file_path="xxxxxx")
@@ -96,6 +102,7 @@ class WCTest(unittest.TestCase):
 
     def test_get_wc(self):
         """
+        Test the result of get_wc() in WC
         Since it is not possible to implement all possible file combinations, I used input partitions to test different types of files
         """
         for (file_path, expected_instance) in WCTest.TEST_GET_WC_TEST_VALUES.items():

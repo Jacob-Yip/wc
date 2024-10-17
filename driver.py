@@ -1,3 +1,7 @@
+"""
+Input format: python ./driver.py <filename>
+Input format: python ./driver.py
+"""
 import sys
 from main.wc import WC
 

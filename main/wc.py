@@ -1,6 +1,6 @@
 """
 The programme that counts the word count of the text in a file
-Input format: python ./driver.py <filename>
+The class to read the file and count its number of words, lines and counts
 Output format:linecount    wordcount    bytecount   filepath
 """
 import os
@@ -28,6 +28,11 @@ class WC:
         self.__wc_data = None
 
     def get_wc(self) -> WCData:
+        """
+        Based on the given file path in constructor, return the WCData instance as a result
+
+        :return: WCData instance
+        """
         try:
             self.__wc_data = WCData(
                 line_count=self.get_line_count(),
@@ -41,9 +46,19 @@ class WC:
             raise Exception(f"Error in get_wc(): {e}")
 
     def get_line_count(self) -> int:
+        """
+        Get the line count of the file
+
+        :return: line_count
+        """
         return len(self.__lines)
 
     def get_word_count(self) -> int:
+        """
+        Get the word count of the file
+
+        :return: word_count
+        """
         word_count = 0
 
         for line in self.__lines:
@@ -53,6 +68,11 @@ class WC:
         return word_count
 
     def get_byte_count(self) -> int:
+        """
+        Get the byte count of the file
+
+        :return: byte_count
+        """
         file_stats = os.stat(self.__file_path)
         # print(f"flie_stats = {file_stats}")
         return file_stats.st_size
