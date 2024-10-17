@@ -1,0 +1,1 @@
+Dummy file - to ensure we can pass a valid file path before testing whether 2 WCData instances are equal
