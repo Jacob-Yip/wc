@@ -43,8 +43,6 @@ class WCData:
         return f"LINE_COUNT  WORD_COUNT  BYTE_COUNT  FILE_PATH\n{self.__line_count}    {self.__word_count}    {self.__byte_count}    {self.__file_path}"
 
     def __eq__(self, __value: object) -> bool:
-        print(f"__value = {__value}")
-        print(f"self = {self}")
         if not isinstance(__value, WCData):
             return False
         else:

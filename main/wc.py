@@ -17,17 +17,6 @@ class WC:
 
         try:
             self.__file = open(self.__file_path, "rt")
-
-            print(f"========== TEST ================")
-            print(
-                f"\nFile exist? = {Utils.is_file_path_valid(file_path=file_path)}")
-            f = open("resource/test/test_valid_file_path.txt", "rt")
-            f.seek(0)
-            lines = f.readlines()
-            f.close()
-            print(f"FFFFFFF.lines = {lines}\n")
-            print(f"==========================")
-
             self.__file.seek(0)  # Just in case
             self.__lines = self.__file.readlines()
             print(f"lines = {self.__lines}; file_path = {self.__file_path}")

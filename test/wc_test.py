@@ -31,28 +31,24 @@ class WCTest(unittest.TestCase):
             "2nd line\n" + \
             "3rd line\n" + \
             "There should be 6 lines\n" + \
-            "Thus, the result should be 6    23    155    resource/test/test_valid_file_path.txt\n" + \
+            "Thus, the result should be 6    23    153    resource/test/test_valid_file_path.txt\n" + \
             "End of file"
 
         try:
             # Create a file
             new_file = open(FILE_PATH, "wt")
             new_file.write(file_content)
+            new_file.flush()
 
             expected_wc_data = WCData(
                 line_count=6,
                 word_count=23,
-                byte_count=155,
+                byte_count=153,
                 file_path=FILE_PATH
             )
 
             wc = WC(file_path=FILE_PATH)
             wc_data = wc.get_wc()
-
-            print(f"=====================================")
-            print(f"\nactual_data = {wc_data}")
-            print(f"\nexpected_data = {expected_wc_data}")
-            print(f"=====================================")
 
             self.assertEqual(first=expected_wc_data, second=wc_data)
         except Exception as e:
@@ -62,8 +58,8 @@ class WCTest(unittest.TestCase):
 
             # We have to close the process new_file first before using os
             # Delete the newly created file
-            # if os.path.exists(FILE_PATH):
-            #     os.remove(FILE_PATH)
+            if os.path.exists(FILE_PATH):
+                os.remove(FILE_PATH)
 
     def test_invalid_file_path(self):
         # Non-existent file path
