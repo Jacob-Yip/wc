@@ -4,6 +4,9 @@ Similar to Linux command wc
 ### This file contains the description of this project
 ### Created by Toothless7788
 
+## IMPORTANT!!! 
+- This programme is designed for ```.txt``` files **only**
+
 ### How to run the programme
 1. Run default file
 ```

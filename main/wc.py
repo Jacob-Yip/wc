@@ -11,7 +11,8 @@ from utils.utils import Utils
 class WC:
     def __init__(self, file_path: str) -> None:
         if not Utils.is_file_path_valid(file_path=file_path):
-            raise Exception(f"Invalid file: {file_path}")
+            raise Exception(
+                f"Invalid file (only accept existing .txt file): {file_path}")
 
         self.__file_path = file_path
 
@@ -19,7 +20,6 @@ class WC:
             self.__file = open(self.__file_path, "rt")
             self.__file.seek(0)  # Just in case
             self.__lines = self.__file.readlines()
-            print(f"lines = {self.__lines}; file_path = {self.__file_path}")
         except Exception as e:
             raise Exception(f"Error in reading {self.__file_path}: {e}")
         finally:
